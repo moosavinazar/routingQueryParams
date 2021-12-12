@@ -10,6 +10,7 @@ import {IUser} from "../interfaces/app-interface";
 })
 export class UserComponent implements OnInit {
 
+  editMode: boolean = false;
   user!: IUser;
 
   constructor(private route: ActivatedRoute,
@@ -25,6 +26,7 @@ export class UserComponent implements OnInit {
 
   public onEditUser() {
     this.router.navigate(['/user', this.user.id, 'edit']);
+    this.editMode = true;
   }
 
 }
