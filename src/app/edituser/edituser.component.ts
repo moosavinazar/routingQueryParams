@@ -15,7 +15,8 @@ export class EdituserComponent implements OnInit {
   constructor(private userService: UserService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.user = <IUser>this.userService.users.find(user => user.id === +this.route.snapshot.params['id']);
+    // @ts-ignore
+    this.user = <IUser>this.userService.users.find(user => user.id === +this.route.parent.snapshot.params['id']);
     if (!this.user) {
       this.router.navigate(['/users'])
     }
