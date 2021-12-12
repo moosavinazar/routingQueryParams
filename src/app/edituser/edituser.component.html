@@ -1,0 +1,6 @@
+<div>
+  <label class="form-label">{{ user.id + ': ' }}</label>
+  <input #name class="form-control" type="text" [value]="user.name">
+  <input #email class="form-control" type="text" [value]="user.email">
+  <button class="btn btn-success" (click)="onSaveChanges(name.value, email.value)">Save changes</button>
+</div>
