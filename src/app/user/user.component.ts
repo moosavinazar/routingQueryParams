@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
   }
 
   public onEditUser() {
-    this.router.navigate(['/user', this.user.id, 'edit']);
+    this.router.navigate(['./edit'], {relativeTo: this.route, queryParams:{editMode: '1', isAdmin: '1'}, fragment: 'title'});
     this.editMode = true;
   }
 
